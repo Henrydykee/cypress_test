@@ -3,8 +3,8 @@ import 'package:cypress_test/model/album_model.dart';
 
 abstract class AlbumState {}
 
-class AlbumLoading extends AlbumState {
-  AlbumLoading();
+class LoadingAlbum extends AlbumState {
+  LoadingAlbum();
 }
 
 class AlbumFetchSuccess extends AlbumState {

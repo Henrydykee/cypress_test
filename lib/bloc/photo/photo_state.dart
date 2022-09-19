@@ -4,8 +4,8 @@ import 'package:cypress_test/model/photo_model.dart';
 
 abstract class PhotoState {}
 
-class PhotoLoading extends PhotoState {
-  PhotoLoading();
+class LoadingPhotos extends PhotoState {
+  LoadingPhotos();
 }
 
 class PhotoFetchSuccess extends PhotoState {

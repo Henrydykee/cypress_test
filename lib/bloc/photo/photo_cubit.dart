@@ -11,7 +11,7 @@ import '../../network/api_call.dart';
 import '../../network/api_services.dart';
 
 class PhotoCubit extends Cubit<PhotoState> {
-  PhotoCubit() : super(PhotoLoading());
+  PhotoCubit() : super(LoadingPhotos());
 
   fetchPhotos(List<Album> albumModel) async {
     BaseOptions options = BaseOptions(method:'GET',baseUrl: ApiServices.BASE_URL);

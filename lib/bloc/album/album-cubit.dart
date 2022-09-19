@@ -9,7 +9,7 @@ import '../../network/api_services.dart';
 import 'album_state.dart';
 
 class AlbumCubit extends Cubit<AlbumState> {
-  AlbumCubit() : super(AlbumLoading());
+  AlbumCubit() : super(LoadingAlbum());
 
   fetchAlbums() async {
     List<dynamic>? response;

@@ -34,11 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Gallery',style: TextStyle(color: Colors.orange,fontSize: 16),),
       ),
         body: BlocBuilder<AlbumCubit, AlbumState>(builder: (context, state) {
-          /// Loading State
-          if (state is AlbumLoading) {
+          if (state is LoadingAlbum) {
             return const Center(child: CircularProgressIndicator());
           }
-          /// Success State
           else if (state is AlbumFetchSuccess) {
             albumModel.addAll(state.albumModel.albums!);
             BlocProvider.of<PhotoCubit>(context).fetchPhotos(albumModel);
@@ -58,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(albumModel[index%4].title??'Album'),
                           BlocBuilder<PhotoCubit, PhotoState>(
                               builder: (context, state){
-                                if (state is PhotoLoading) {
+                                if (state is LoadingPhotos) {
                                   return const SizedBox(
                                       height: 100,
                                       child: Center(child: CircularProgressIndicator()));
